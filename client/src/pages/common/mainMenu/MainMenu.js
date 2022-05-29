@@ -1,9 +1,10 @@
-import { Button, Col, Layout, Row, Typography } from 'antd';
+import { Button, Col, Divider, Layout, Row, Typography, Menu } from 'antd';
 import Texty from 'rc-texty';
 import 'rc-texty/assets/index.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { HeaderNavbar } from '../../../components/common/mainMenu';
+import { Footer } from '../../../components/common/sharedLayout';
 import "./attend_bg1.jpeg"
 
 import "./styles.css"

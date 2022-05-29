@@ -1,4 +1,4 @@
-import { LoadingOutlined } from '@ant-design/icons';
+import { LoadingOutlined, UserOutlined } from '@ant-design/icons';
 import { useMutation } from '@apollo/react-hooks';
 import { Avatar, Button, Card, Form, Input, Layout, message } from 'antd';
 import React, { useContext, useState } from 'react';
@@ -6,6 +6,7 @@ import {
   Footer,
   Greeting,
   Navbar,
+  PageTitleBreadcrumb,
 } from '../../../components/common/sharedLayout';
 import { AuthContext } from '../../../context';
 import { CheckError } from "../../../utils/ErrorHandling";

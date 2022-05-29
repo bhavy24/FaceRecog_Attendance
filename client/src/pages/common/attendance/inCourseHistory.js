@@ -110,8 +110,8 @@ export default (props) => {
       dataIndex: "open",
       key: "open",
       render: (text) => (
-        <Tag color={text === "On" ? "#0c8" : "#f00"}>
-          {text} {text === "On" ? <ClockCircleFilled /> : <StopOutlined />}
+        <Tag color={text == "On" ? "#0c8" : "#f00"}>
+          {text} {text == "On" ? <ClockCircleFilled /> : <StopOutlined />}
         </Tag>
       ),
       align: "center",
@@ -138,7 +138,7 @@ export default (props) => {
             ></Button>
           </Tooltip>
 
-          {user.userLevel === 1 && (
+          {user.userLevel == 1 && (
             <Tooltip placement="topLeft" title="Delete Record">
               <Button
                 onClick={() => handleDelete(record)}
@@ -147,7 +147,7 @@ export default (props) => {
                   deleteAttendanceListtatus.loading
                 }
                 disabled={
-                  selectedAttendance.key === record.key &&
+                  selectedAttendance.key == record.key &&
                   deleteAttendanceListtatus.loading
                 }
                 style={{ margin: "10px" }}

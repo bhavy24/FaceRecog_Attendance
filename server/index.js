@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const { ApolloServer, PubSub } = require('apollo-server');
 
 const mongoose = require('mongoose');
@@ -8,11 +10,9 @@ const resolvers = require('./graphql/resolvers');
 
 const pubsub = new PubSub();
 
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 
-var env = 'development';
-
-// creating an ApolloServer instance
+var env = process.env.NODE_ENV || 'development';
 
 const server = new ApolloServer({
   cors: {
@@ -27,8 +27,6 @@ const server = new ApolloServer({
 mongoose.set('useCreateIndex', true);
 mongoose.set('useFindAndModify', false);
 
-// connect to the mongo ATLAS cluster using the connection string
-
 mongoose
   .connect("mongodb+srv://bhavya24:Ipad12345@cluster0.fprdc.mongodb.net/?retryWrites=true&w=majority", {
     useNewUrlParser: true,
@@ -36,7 +34,7 @@ mongoose
   })
   .then(() => {
     console.log('MongoDB Connected');
-    return server.listen({ port: PORT }); // add a listener at the port running the cluster
+    return server.listen({ port: PORT });
   })
   .then((res) => {
     console.log(`Server running at ${res.url}`);
@@ -44,3 +42,59 @@ mongoose
   .catch((err) => {
     console.error(err);
   });
+
+/*Test
+
+  Postman
+{
+  "query": "mutation {createCourse(courseInput: {code: \"123\", section: \"123\", name: \"123\"}) {name}}"
+}
+
+  mutation{
+  createPerson(personInput:{
+    firstName: "chai"
+    lastName: "cheah Wen"
+    email:"12wss3"
+    password: "123"
+    userLevel: 0
+    SchoolCardID: "A17CS0028"
+  }){
+    _id
+    lastLogin
+    createdAt
+  }
+}
+
+  mutation{
+  createCourse(courseInput:{
+    name: "Test",
+    code:"test",
+    section: "test"
+  })
+  {
+    creator{
+      firstName
+
+    }
+    code
+    name
+  }
+}
+
+  mutation{
+  deleteCourse(courseID:"5ee1de0f270b0f8774f94094")
+ {
+  name
+  creator{
+    firstName
+    createdCourses{
+      name
+    }
+  }
+}
+}
+
+
+
+
+  */

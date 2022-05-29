@@ -1,5 +1,3 @@
-// sign up and sign in form validator using RegEx
-
 module.exports.validateRegisterInput = (
   firstName,
   lastName,

@@ -1,5 +1,5 @@
 import { LoadingOutlined, PlusOutlined } from "@ant-design/icons";
-import { Button, Col, message, Modal, Row, Upload } from "antd";
+import { Button, Card, Col, message, Modal, Row, Upload } from "antd";
 import React, { useState } from "react";
 import { CheckError } from "../../../utils/ErrorHandling";
 import { getFullFaceDescription } from "../../../faceUtil";

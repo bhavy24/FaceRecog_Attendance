@@ -15,7 +15,7 @@
     "apollo-server": "^2.15.1",
     "bcryptjs": "^2.4.3",
     "cloudinary": "^1.22.0",
-    "dotenv": "^8.2.0",
+    "dotenv": "^8.6.0",
     "googleapis": "^39.2.0",
     "graphql": "^15.2.0",
     "jsonwebtoken": "^8.5.1",

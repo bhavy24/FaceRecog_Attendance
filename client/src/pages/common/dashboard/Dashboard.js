@@ -1,5 +1,6 @@
 import {
   ArrowRightOutlined,
+  EditFilled,
   DeleteFilled,
   RedoOutlined,
 } from "@ant-design/icons";
@@ -27,6 +28,8 @@ import {
   FETCH_COURSES_QUERY,
 } from "../../../graphql/query";
 import "./Dashboard.css";
+
+const { Content } = Layout;
 
 export default (props) => {
   const { user } = useContext(AuthContext);
@@ -122,10 +125,10 @@ export default (props) => {
           <Button
             onClick={() => handleDelete(record)}
             loading={
-              selectedCourse.key === record.key && withdrawCourseStatus.loading
+              selectedCourse.key == record.key && withdrawCourseStatus.loading
             }
             disabled={
-              selectedCourse.key === record.key && withdrawCourseStatus.loading
+              selectedCourse.key == record.key && withdrawCourseStatus.loading
             }
             style={{ margin: "10px" }}
             type="danger"
@@ -187,7 +190,7 @@ export default (props) => {
   });
 
   //get list of couse query
-  const { data, loading, refetch } = useQuery(FETCH_COURSES_QUERY, {
+  const { data, loading, refetch, fetchMore } = useQuery(FETCH_COURSES_QUERY, {
     onCompleted(data) {
       setTablePagination({
         ...tablePagination,

@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import {
   AttendanceProvider,
@@ -36,6 +36,7 @@ import {
   StudentRoute,
   UndefinedCardIDAndRoleRoute,
 } from "./routes";
+import Testing from "./Testing";
 import "lazysizes";
 
 function App() {

@@ -1,5 +1,3 @@
-// attendance schema for Mongo DB
-
 const { model, Schema } = require("mongoose");
 
 const attendanceSchema = new Schema(

@@ -1,4 +1,4 @@
-import { Button, Card, Form, message, Select } from "antd";
+import { Button, Card, Form, Col, message, Select } from "antd";
 import React, { useEffect, useRef, useState } from "react";
 import Webcam from "react-webcam";
 import { getFullFaceDescription } from "../../../faceUtil";
@@ -27,6 +27,7 @@ export const UploadFromWebcam = ({
 
   const [faceDescriptor, setFaceDescriptor] = useState([]);
 
+  const [detectionCount, setDetectionCount] = useState(0);
   const [previewImage, setPreviewImage] = useState("");
 
   const [waitText, setWaitText] = useState("");
@@ -82,7 +83,6 @@ export const UploadFromWebcam = ({
             setWaitText("");
           })
           .catch((err) => {
-            console.log(err);
             setWaitText(
               "Preparing face matcher and device setup, please wait..."
             );

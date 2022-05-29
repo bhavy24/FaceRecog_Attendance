@@ -30,7 +30,7 @@ function StudentRoute({ component: Component, ...rest }) {
             ),
             description: `Number of face photograph uploaded: ${facePhotosCountQuery.data.getFacePhotosCount}`,
           });
-          if (window.location.pathname !== "/notification" && window.location.pathname !== "/facegallery")
+          if (window.location.pathname != "/notification" && window.location.pathname != "/facegallery")
             window.location.href = "/facegallery";
         }
   }, [facePhotosCountQuery]);

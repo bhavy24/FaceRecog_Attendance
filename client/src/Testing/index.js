@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Button, message } from 'antd';
+import { Button, Input, message } from 'antd';
 import { LoadingOutlined } from '@ant-design/icons';
-import { useMutation } from '@apollo/react-hooks';
+import { useQuery, useMutation } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
 export default () => {
   const [courseID, SetCourseID] = useState('');

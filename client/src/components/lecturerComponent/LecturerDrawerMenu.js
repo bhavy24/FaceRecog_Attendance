@@ -1,11 +1,20 @@
 import {
   HomeOutlined,
 } from '@ant-design/icons';
+import { useQuery } from '@apollo/react-hooks';
 import { Drawer } from 'antd';
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { EnrolmentContext } from '../../context';
+import { CheckError } from '../../utils/ErrorHandling';
+import { FETCH_ENROLREQUEST_COUNT_QUERY } from '../../graphql/query';
 
 export default ({ isCollapseMenuOpen, setIsCollapseMenuOpen }) => {
+  const pathname = window.location.pathname;
+  const path = pathname === '/' ? 'home' : pathname.substr(1);
+
+  const { enrolCount, getEnrolCount } = useContext(EnrolmentContext);
+
 
   return (
     <Drawer

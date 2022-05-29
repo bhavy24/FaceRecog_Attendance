@@ -1,6 +1,6 @@
-import { LockOutlined, MailOutlined, UserOutlined } from '@ant-design/icons';
+import { LockOutlined, MailOutlined, UserOutlined, LoadingOutlined } from '@ant-design/icons';
 import { useMutation } from '@apollo/react-hooks';
-import { Button, Card, Form, Input, Layout, message, Radio, Divider } from 'antd';
+import { Button, Card, Form, Input, Layout, message, Radio, Divider, Space } from 'antd';
 import "./styles.css"
 import React, { useContext, useState } from 'react';
 
@@ -36,6 +36,8 @@ export default (props) => {
     },
     variables: values,
   });
+
+  const [isAgreementChecked, setIsAgreementChecked] = useState(false);
 
   function registerUser() {
     addUser();

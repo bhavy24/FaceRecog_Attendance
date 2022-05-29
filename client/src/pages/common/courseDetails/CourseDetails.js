@@ -95,7 +95,7 @@ export default (props) => {
   const [selectedParticipant, setSelectedParticipant] = useState({});
 
   const [visible, setVisible] = useState(false);
-  if (user.userLevel === 0) {
+  if (user.userLevel == 0) {
     columns.splice(-1, 1);
   }
 

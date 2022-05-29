@@ -3,6 +3,7 @@ import {
   Avatar,
   Button,
   Card,
+  Checkbox,
   Divider,
   Form,
   Input,
@@ -12,6 +13,7 @@ import {
   Typography,
 } from "antd";
 import React, { useContext, useState } from "react";
+import { Link } from "react-router-dom";
 import { APP_LOGO_URL } from "../../../assets";
 import Footer from "../../../components/common/sharedLayout/Footer";
 import { AuthContext } from "../../../context";
@@ -44,6 +46,7 @@ export default (props) => {
       },
     }
   );
+  const [isAgreementChecked, setIsAgreementChecked] = useState(false);
 
   function editCardIDAndRole() {
     editCardIDAndRoleCallback();

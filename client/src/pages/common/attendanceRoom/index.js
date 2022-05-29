@@ -28,7 +28,7 @@ const { Option } = Select;
 const { Title } = Typography;
 export default (props) => {
   const { user } = useContext(AuthContext);
-  const { threshold } = useContext(
+  const { threshold, setFaceThresholdDistance } = useContext(
     FaceThresholdDistanceContext
   );
   const [mode, setMode] = useState(DEFAULT_ATTENDANCE_MODE);
@@ -38,10 +38,10 @@ export default (props) => {
   const [facePhotos, setFacePhotos] = useState([]);
   const [faceMatcher, setFaceMatcher] = useState(null);
 
-  const [ setAbsentees ] = useState([]);
+  const [absentees, setAbsentees] = useState([]);
   const [course, setCourse] = useState({});
 
-  const { data } = useQuery(
+  const { data, loading, error } = useQuery(
     FETCH_FACE_MATCHER_IN_COURSE_QUERY,
     {
       onError(err) {
@@ -95,7 +95,7 @@ export default (props) => {
       if (attendanceGQLQuery.data.getAttendance.isOn)
         message.info("Attendance is currently opened");
       else {
-        if (user.userLevel === 0)
+        if (user.userLevel == 0)
           message.info("Attendance had been closed by the host.");
         else {
           message.info(
@@ -144,7 +144,7 @@ export default (props) => {
       onCompleted: async (data) => {
         setIsOn(data.editAttendanceOnOff.isOn);
         message.success(
-          `Attendance is ${data.editAttendanceOnOff.isOn === 1 ? " on" : " off"}`
+          `Attendance is ${data.editAttendanceOnOff.isOn == 1 ? " on" : " off"}`
         );
       },
       onError(err) {
@@ -197,7 +197,7 @@ export default (props) => {
         <Content>
           <Card
             title={
-              mode === "F2F" ? (
+              mode == "F2F" ? (
                 <Title level={4}>F2F Attendance</Title>
               ) : (
                 <Title level={4}>Remote Attendance</Title>
@@ -212,7 +212,7 @@ export default (props) => {
             )}
           </Card>
 
-          {user.userLevel === 1 && (
+          {user.userLevel == 1 && (
             <Card title={<Title level={4}>Attendance Setting</Title>}>
               <Form>
                 <Form.Item label="Mode">
@@ -251,8 +251,8 @@ export default (props) => {
           {/* For F2F, use Lecturer PC For FR */}
           {attendanceGQLQuery.data &&
             isOn &&
-            mode === "F2F" &&
-            user.userLevel === 1 && (
+            mode == "F2F" &&
+            user.userLevel == 1 && (
               <ProcessFaceRecognition
                 {...props}
                 faceMatcher={faceMatcher}

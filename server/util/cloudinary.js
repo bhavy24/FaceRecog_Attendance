@@ -1,5 +1,3 @@
-// connect to cloudinary to store media ie: profile pictures of users and face gallery images
-
 const cloudinary = require("cloudinary").v2
 cloudinary.config({
     cloud_name: "dv4idk5sq",
