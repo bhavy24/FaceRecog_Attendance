@@ -1,0 +1,12 @@
+.frames{
+    border-radius : 9px;
+    border : 3px indent  ;
+    box-shadow: rgba(60, 66, 87, 0.12) 0px 7px 14px 0px, rgba(0, 0, 0, 0.12) 0px 3px 6px 0px;
+    margin-bottom: 25px;
+}
+
+.indent{
+    position : relative;
+    left : 400px;
+    bottom : 100px;
+}

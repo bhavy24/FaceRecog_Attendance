@@ -1,0 +1,25 @@
+.syntax{
+    display: inline;
+    color: inherit;
+    border: 2px solid #666;
+    padding: 0.5rem;
+    font-size: 1rem;
+    background: inherit;
+    border-radius: .25rem;
+    width: 200%;
+    border-radius : 25px;
+    }
+    
+    .label {
+        display: inline;
+        width: max-content;
+        font-size: 1rem;
+        
+    }
+    
+    .card{
+        border-radius : 15px;
+        border : 3px indent  ;
+        box-shadow: rgba(60, 66, 87, 0.12) 0px 7px 14px 0px, rgba(0, 0, 0, 0.12) 0px 3px 6px 0px;
+        margin-bottom: 30px;
+    }
