@@ -7,7 +7,7 @@ Download and install NodeJS and nodemon if you don'thave them: https://nodejs.or
 Ensure the latest version of Node JS and npm have been installed in your machine.
 
 ### Step 1: Download the source code
-If you have "git" installed, open CMD and type "git clone https://github.com/CodeShareCW/Attendlytical.git".
+If you have "git" installed, open CMD and type "git clone https://github.com/bhavy24/FaceRecog_Attendance.git".
 ### Step 2: Install the dependency
 Open project in Visual Studio Code or any IDE.
 Open CMD in VSCode or terminal, change directory to "client" folder and install the dependency 
