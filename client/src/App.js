@@ -25,9 +25,7 @@ import {
   AttendanceRoom,
   UndefinedCardIDAndRole,
 } from "./pages/common";
-import {
-  AttendanceForm,
-} from "./pages/lecturerPage";
+import { AttendanceForm } from "./pages/lecturerPage";
 import { FaceGallery } from "./pages/studentPage";
 import {
   AuthRoute,

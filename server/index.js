@@ -27,8 +27,10 @@ const server = new ApolloServer({
 mongoose.set('useCreateIndex', true);
 mongoose.set('useFindAndModify', false);
 
+// Username : Bhavya247
+// Password : Ipad12345
 mongoose
-  .connect("mongodb+srv://bhavya24:Ipad12345@cluster0.fprdc.mongodb.net/?retryWrites=true&w=majority", {
+  .connect("mongodb+srv://Bhavya247:Ipad12345@bhavyacluster.k54yoiq.mongodb.net/?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
