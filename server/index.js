@@ -29,6 +29,7 @@ mongoose.set('useFindAndModify', false);
 
 // Username : Bhavya247
 // Password : Ipad12345
+//new connection string
 mongoose
   .connect("mongodb+srv://Bhavya247:Ipad12345@bhavyacluster.k54yoiq.mongodb.net/?retryWrites=true&w=majority", {
     useNewUrlParser: true,
